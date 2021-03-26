@@ -5,3 +5,4 @@
 `example(plot)`: ouvre un graphique d'exemple
 `demo()`: présente les possibilités dans les package de base
 `demo(package = .packages(all.available = TRUE))`: présente les démos dans tous les packages disponibles
+`NomFichier <- read.xlsx('CheminFichier', numéro_page, header=TRUE, colClasses=NA)`: importer une page de classeur excel
