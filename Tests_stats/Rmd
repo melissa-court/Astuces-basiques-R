@@ -1,0 +1,5 @@
+# Test de Kruskal-Wallis
+_Importer son tableur_
+Exemple avec un fichier : 
+(https://ibb.co/zP0Tv0W)
+Comparaison %>% sample_n_by(group, size =1)
