@@ -1,5 +1,26 @@
 # Test de Kruskal-Wallis
+_Charger les packages_
+install.packages(c("tidyverse", "ggpubr", "rstatix")
+library(tidyverse)
+library(ggpubr)
+library(rstatix)
+
 _Importer son tableur_
+> Comparaison <- read.xlsx('/Users/fredericwolf/Desktop/Stage 2021/PhytoPAM/mesures_obsc.xlsx', 4, header=TRUE, colClasses=NA)
 Exemple avec un fichier : 
 (https://ibb.co/zP0Tv0W)
-Comparaison %>% sample_n_by(group, size =1)
+> Comparaison %>% sample_n_by(group, size =1)
+>  Comparaison <- Comparaison %>%
++ reorder_levels(group, order = c("param1", "param2", "param3"))
+> Comparaison %>%
++ group_by(group) %>%
++ get_summary_stats(mesure, type = "common")
++ res.kruskal <- Comparaison %>% kruskal_test(mesure~group)
+> res.kruskal
+
+# Test de Dunn
+_(si Kruskal-Wallis montre une différence significative, regarder quels groupes sont concernés)_
+> Dunn <- Comparaison %>%
++ dunn_test(mesure~group, p.adjust.method = "bonferroni")
+
+# ACP (Analyse de Composantes Principales)
