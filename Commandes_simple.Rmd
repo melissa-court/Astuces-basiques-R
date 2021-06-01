@@ -6,3 +6,5 @@
 `demo()`: présente les possibilités dans les package de base
 `demo(package = .packages(all.available = TRUE))`: présente les démos dans tous les packages disponibles
 `NomFichier <- read.xlsx('CheminFichier', numéro_page, header=TRUE, colClasses=NA)`: importer une page de classeur excel
+`rownames(tableau)<-tableau[,1]
+tableau<-tableau[,-1]`: mettre les colonnes en titre (label)
